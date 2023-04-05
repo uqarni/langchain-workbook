@@ -1,11 +1,11 @@
 import openai
 import langchain
 import os
-import chromadb
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-print(openai.api_key)
 
+
+#Chat Schema
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 
@@ -19,5 +19,17 @@ output = chat(
     HumanMessage(content="I don't like cheese")
     ]
 )
+
+#Document Schema
+from langchain.schema import Document
+
+template = Document(page_content = "This is my document. It is full of text that I've gathered from other places",
+         metadata={
+    'id' : 1234,
+    'source' : 'Attorney notes',
+    'create_time' : 1680013019
+         })
+
+print(template)
 print(output)
 
