@@ -5,7 +5,7 @@ import os
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 
-#Chat Schema
+##Chat Schema
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 
@@ -19,17 +19,19 @@ output = chat(
     HumanMessage(content="I don't like cheese")
     ]
 )
+print(output)
 
-#Document Schema
+##Document Schema
 from langchain.schema import Document
 
-template = Document(page_content = "This is my document. It is full of text that I've gathered from other places",
+template = Document(page_content = "These are my notes from a meeting I had with my client today.",
          metadata={
     'id' : 1234,
     'source' : 'Attorney notes',
+    'agent' : 'Tom. Cruise',
     'create_time' : 1680013019
          })
 
 print(template)
-print(output)
+
 
