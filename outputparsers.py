@@ -46,3 +46,6 @@ print(promptValue)
 
 llm_output = llm(promptValue)
 print(llm_output)
+
+print("formatted:")
+print(output_parser.parse(llm_output))
