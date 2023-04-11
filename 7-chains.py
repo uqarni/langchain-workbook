@@ -46,7 +46,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.document_loaders import TextLoader  
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-loader = TextLoader('/meditations.txt')
+loader = TextLoader('meditations.txt')
 documents = loader.load()
 
 #get your splitter ready
@@ -58,3 +58,4 @@ texts = text_splitter.split_documents(documents)
 #run summarization
 chain = load_summarize_chain(llm, chain_type = "map_reduce", verbose = True)
 chain.run(texts)
+##!!! how to make this work for long texts, how to use gpt-3.5-turbo
