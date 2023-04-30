@@ -1,7 +1,7 @@
 # main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-from functionz import color_teller
+from funcs import color_teller
 
 app = FastAPI()
 
