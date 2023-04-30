@@ -37,25 +37,25 @@ meal_chain = LLMChain(llm = llm, prompt = prompt_template2)
 
 #combine into a chain
 overall_chain = SimpleSequentialChain(chains=[location_chain, meal_chain], verbose=True)
-#example = overall_chain.run("Pakistan")
+example = overall_chain.run("Pakistan")
 
-####Summarization Chain
-#Run through long documents and get a summary
+# ####Summarization Chain
+# #Run through long documents and get a summary
 
-from langchain.chains.summarize import load_summarize_chain
-from langchain.document_loaders import TextLoader  
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from langchain.chains.summarize import load_summarize_chain
+# from langchain.document_loaders import TextLoader  
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-loader = TextLoader('meditations.txt')
-documents = loader.load()
+# loader = TextLoader('meditations.txt')
+# documents = loader.load()
 
-#get your splitter ready
-text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap = 50)
+# #get your splitter ready
+# text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap = 50)
 
-#split your doc
-texts = text_splitter.split_documents(documents)
+# #split your doc
+# texts = text_splitter.split_documents(documents)
 
-#run summarization
-chain = load_summarize_chain(llm, chain_type = "map_reduce", verbose = True)
-chain.run(texts)
-##!!! how to make this work for long texts, how to use gpt-3.5-turbo
+# #run summarization
+# chain = load_summarize_chain(llm, chain_type = "map_reduce", verbose = True)
+# chain.run(texts)
+# ##!!! how to make this work for long texts, how to use gpt-3.5-turbo

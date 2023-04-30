@@ -26,7 +26,7 @@ output = chat(
     ]
 )
 
-#print(output)
+print(output)
 
 
 ##Embeddings Models
@@ -36,8 +36,8 @@ embeddings = OpenAIEmbeddings(openai_api_key = openai.api_key)
 text = "Hi! Do you offer patents?"
 
 text_embedding = embeddings.embed_query(text)
-print(f"Your embedding's length is {len(text_embedding)}")
-print(f"First few entries in it are {text_embedding[:3]}...")
+#print(f"Your embedding's length is {len(text_embedding)}")
+#print(f"First few entries in it are {text_embedding[:3]}...")
 
 
 

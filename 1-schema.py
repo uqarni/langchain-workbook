@@ -28,10 +28,10 @@ template = Document(page_content = "These are my notes from a meeting I had with
          metadata={
     'id' : 1234,
     'source' : 'Attorney notes',
-    'agent' : 'Tom. Cruise',
+    'agent' : 'Tom Cruise',
     'create_time' : 1680013019
          })
 
-print(template)
+#print(template)
 
 

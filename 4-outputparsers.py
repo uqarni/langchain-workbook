@@ -42,10 +42,10 @@ prompt  = PromptTemplate(
     template = template)
 
 promptValue = prompt.format(input = "Hey I'm Greg. That's my first name. Last name's Johnson.")
-print(promptValue)
+#print(promptValue)
 
 llm_output = llm(promptValue)
-print(llm_output)
+#print(llm_output)
 
-print("formatted:")
+##print("formatted:")
 print(output_parser.parse(llm_output))

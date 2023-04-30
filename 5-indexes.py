@@ -6,9 +6,12 @@ from langchain.document_loaders import HNLoader
 #someone made a hacker news loader
 loader = HNLoader("https://news.ycombinator.com/item?id=35301943")
 
-data = loader.load()
-# print(f"Found{len(data)} comments")
-# print(data[:5])
+# data = loader.load()
+# print(f"Found {len(data)} comments")
+# print('\n')
+# for i in data[:5]:
+#     print(i)
+#     print('\n')
 
 
 
@@ -84,10 +87,10 @@ texts = text_splitter.split_documents(documents)
 #get embeddings engine ready
 embeddings = OpenAIEmbeddings(openai_api_key = os.environ.get("OPENAI_API_KEY"))
 
-print(f"you have {len(texts)} documents")
+#print(f"you have {len(texts)} documents")
 
 embedding_list = embeddings.embed_documents([text.page_content for text in texts])
-print(f"You have {len(embedding_list)} embeddings")
-print(f"here is a sample of one: {embedding_list[0][:3]}...")
+#print(f"You have {len(embedding_list)} embeddings")
+#print(f"here is a sample of one: {embedding_list[0][:3]}...")
 
 
