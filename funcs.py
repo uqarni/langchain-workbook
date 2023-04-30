@@ -58,33 +58,4 @@ def color_teller(thing):
 test = color_teller("sky")
 print(test)
 
-
-
-def tm_conflict_search(name, industry):
-    #connect to trademarks vector db (for vector search)
-
-    #connect to trademarks non-vector db (for classical elastic search)
-
-    #connect to examples db
-
-    #select examples
-
-    #conduct few-shot similarty search in vector db
-
-    #conduct elastic search in non-vector db
-
-    #serve similarities to attorney
-
-    #save their flags for interesting example
-
-    #update few shot examples
-    return True
-
-
-
-def update_tms_vector_db():
-    #pull all new tms
-
-    #add to vector db
-    return True
-
+exec()
