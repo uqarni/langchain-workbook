@@ -23,7 +23,7 @@ prompt_template1 = PromptTemplate(input_variables=["user_location"], template =t
 location_chain = LLMChain(llm = llm, prompt = prompt_template1)
 
 template2 = """
-Given a meal, give a short and simple recipe on how to amke that dish at home.
+Given a meal, give a short and simple recipe on how to make that dish at home.
 %MEAL
 {user_meal}
 
