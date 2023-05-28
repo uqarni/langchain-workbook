@@ -94,7 +94,7 @@ parts = Object(
         Text(id = "part", description = "The name of the part of a car")
     ],
     examples=[
-        ("the jeep has an wheels and windows", 
+        ("the jeep has wheels and windows", 
             [
                 {"part": "wheels"},    
                 {"part": "windows"}
@@ -130,5 +130,13 @@ cars_schema = Object(
 text = "The blue Mercedes Benze has a rearview mirror, roof, and windwhield. Inside sits a girl wearing pants. On those pants she's wearing a huge Texan leather belt."
 
 chain = create_extraction_chain(llm, cars_schema, encoder_or_encoder_class = "json")
-output = chain.predict_and_parse(text = text)["data"]
-print(output)
+#output = chain.predict_and_parse(text = text)["data"]
+#print(output)
+
+#the prompt is pretty interesting. kor does this
+#prompt = chain.prompt.format_prompt(text = text).to_string()
+#print(prompt)
+
+schema = Object(
+    id = "forecaster",
+    description=
