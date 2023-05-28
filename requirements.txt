@@ -2,3 +2,6 @@ openai
 langchain
 google-search-results
 faiss-cpu
+kor
+bs4
+markdownify
